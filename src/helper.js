@@ -1,5 +1,8 @@
 import Qiniu from 'qiniu-js';
 import objectAssign from 'object-assign';
+import plupload from 'plupload';
+import mOxie from 'plupload/js/moxie';
+import Q from 'q';
 
 const defaultOptions = {
   runtimes: 'html5',
@@ -28,9 +31,28 @@ const defaultOptions = {
 
 
 export default class {
-  static init(inOptions) {
-    return Qiniu.uploader(
-      objectAssign(defaultOptions, inOptions)
+
+  static hotfix() {
+    window.plupload = plupload;
+    window.mOxie = mOxie;
+    window.mOxie.Env = mOxie.core.utils.Env;
+    window.mOxie.XMLHttpRequest = mOxie.xhr.XMLHttpRequest;
+  }
+
+  static uploader(inOptions) {
+    const deferred = Q.defer();
+    Qiniu.uploader(
+      objectAssign(defaultOptions, {
+        init: {
+          FileUploaded: function (up, file, info) {
+            deferred.resove(up, file, info);
+          },
+          Error: function (up, err, errTip) {
+            deferred.reject(up, err, errTip);
+          }
+        }
+      }, inOptions)
     );
+    return deferred.promise;
   }
 }

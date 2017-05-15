@@ -15,6 +15,18 @@ var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
+var _plupload = require('plupload');
+
+var _plupload2 = _interopRequireDefault(_plupload);
+
+var _moxie = require('plupload/js/moxie');
+
+var _moxie2 = _interopRequireDefault(_moxie);
+
+var _q = require('q');
+
+var _q2 = _interopRequireDefault(_q);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48,9 +60,28 @@ var _default = function () {
   }
 
   _createClass(_default, null, [{
-    key: 'init',
-    value: function init(inOptions) {
-      return _qiniuJs2.default.uploader((0, _objectAssign2.default)(defaultOptions, inOptions));
+    key: 'hotfix',
+    value: function hotfix() {
+      window.plupload = _plupload2.default;
+      window.mOxie = _moxie2.default;
+      window.mOxie.Env = _moxie2.default.core.utils.Env;
+      window.mOxie.XMLHttpRequest = _moxie2.default.xhr.XMLHttpRequest;
+    }
+  }, {
+    key: 'uploader',
+    value: function uploader(inOptions) {
+      var deferred = _q2.default.defer();
+      _qiniuJs2.default.uploader((0, _objectAssign2.default)(defaultOptions, {
+        init: {
+          FileUploaded: function FileUploaded(up, file, info) {
+            deferred.resove(up, file, info);
+          },
+          Error: function Error(up, err, errTip) {
+            deferred.reject(up, err, errTip);
+          }
+        }
+      }, inOptions));
+      return deferred.promise;
     }
   }]);
 
