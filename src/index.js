@@ -1,11 +1,12 @@
 import Qiniu from 'qiniu-js';
+import mOxie from './moxie';
 import plupload from './plupload';
-import mOxie from 'mOxie';
+
 
 
 window.mOxie = mOxie;
 window.plupload = plupload;
-
+window.aa=1234;
 
 export default Qiniu;
 
