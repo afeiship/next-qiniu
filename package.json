@@ -2,12 +2,12 @@
   "name": "qiniu-jssdk",
   "version": "0.0.1",
   "description": "A better qiniu sdk for webpack app.",
-  "main": "dist/qiniu-jssdk.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:afeiship/qiniu-jssdk.git",
   "author": "feizheng <1290657123@qq.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel src/index.js > dist/qiniu-jssdk.js",
+    "build": "babel src -d dist",
     "dev": "babel src -d dist -x .js -w"
   },
   "devDependencies": {

@@ -25,4 +25,3 @@ window.plupload = _plupload2.default;
 exports.default = _qiniuJs2.default;
 exports.mOxie = _mOxie2.default;
 exports.plupload = _plupload2.default;
-
