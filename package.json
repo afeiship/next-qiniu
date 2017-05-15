@@ -2,7 +2,7 @@
   "name": "qiniu-jssdk",
   "version": "0.0.1",
   "description": "A better qiniu sdk for webpack app.",
-  "main": "dist/index.js",
+  "main": "dist/qiniu-jssdk.js",
   "repository": "git@github.com:afeiship/qiniu-jssdk.git",
   "author": "feizheng <1290657123@qq.com>",
   "license": "MIT",
