@@ -1,10 +1,11 @@
 import Qiniu from 'qiniu-js';
 import plupload from 'plupload';
-import mOxie from 'pluploadjs/moxie';
+import mOxie from 'plupload/js/moxie';
 
 
 export default Qiniu;
-export {
-  plupload,
-  mOxie
-}
+
+export const bootstrap = function () {
+  window.plupload = plupload;
+  window.mOxie = mOxie;
+};
