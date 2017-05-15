@@ -29,6 +29,6 @@
   },
   "dependencies": {
     "plupload": "^2.3.2",
-    "qiniu-js": "^1.0.19"
+    "qiniu-js": "github:afeiship/qiniu-js"
   }
 }
