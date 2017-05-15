@@ -23,4 +23,6 @@ exports.default = _qiniuJs2.default;
 var bootstrap = exports.bootstrap = function bootstrap() {
   window.plupload = _plupload2.default;
   window.mOxie = _moxie2.default;
+  window.mOxie.Env = _moxie2.default.core.utils.Env;
+  window.mOxie.XMLHttpRequest = _moxie2.default.xhr.XMLHttpRequest;
 };
