@@ -4,7 +4,7 @@
 
 ## install:
 ```bash
-npm install afeiship/moxie-plupload
+npm install afeiship/qiniu-jssdk
 ```
 
 ## usage:
