@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.bootstrap = undefined;
+exports.bootstrap = exports.QiniuHelper = undefined;
 
 var _qiniuJs = require('qiniu-js');
 
@@ -20,6 +20,8 @@ var _moxie2 = _interopRequireDefault(_moxie);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _qiniuJs2.default;
+var QiniuHelper = exports.QiniuHelper = require('./helper').default;
+
 var bootstrap = exports.bootstrap = function bootstrap() {
   window.plupload = _plupload2.default;
   window.mOxie = _moxie2.default;

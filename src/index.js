@@ -2,8 +2,8 @@ import Qiniu from 'qiniu-js';
 import plupload from 'plupload';
 import mOxie from 'plupload/js/moxie';
 
-
 export default Qiniu;
+export const QiniuHelper = require('./helper').default;
 
 export const bootstrap = function () {
   window.plupload = plupload;
