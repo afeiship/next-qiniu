@@ -21,7 +21,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.mOxie = _moxie2.default;
 window.plupload = _plupload2.default;
-window.aa = 1234;
 
 exports.default = _qiniuJs2.default;
 exports.mOxie = _moxie2.default;

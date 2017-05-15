@@ -193,8 +193,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		return options;
 	}
 
-	/** 
-  * @module plupload	
+	/**
+  * @module plupload
   * @static
   */
 	var plupload = {
@@ -422,7 +422,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		/**
    * Get array of DOM Elements by their ids.
-   * 
+   *
    * @method get
    * @param {String} id Identifier of the DOM Element
    * @return {Array}
@@ -864,22 +864,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	plupload.Uploader = function (settings) {
 		/**
   Fires when the current RunTime has been initialized.
-  
-  @event Init
+  	@event Init
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 
 		/**
   Fires after the init event incase you need to perform actions there.
-  
-  @event PostInit
+  	@event PostInit
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 
 		/**
   Fires when the option is changed in via uploader.setOption().
-  
-  @event OptionChanged
+  	@event OptionChanged
   @since 2.1
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {String} name Name of the option that was changed
@@ -889,30 +886,26 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		/**
   Fires when the silverlight/flash or other shim needs to move.
-  
-  @event Refresh
+  	@event Refresh
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 
 		/**
   Fires when the overall state is being changed for the upload queue.
-  
-  @event StateChanged
+  	@event StateChanged
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 
 		/**
   Fires when browse_button is clicked and browse dialog shows.
-  
-  @event Browse
+  	@event Browse
   @since 2.1.2
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 
 		/**
   Fires for every filtered file before it is added to the queue.
-  
-  @event FileFiltered
+  	@event FileFiltered
   @since 2.1
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {plupload.File} file Another file that has to be added to the queue.
@@ -920,23 +913,20 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		/**
   Fires when the file queue is changed. In other words when files are added/removed to the files array of the uploader instance.
-  
-  @event QueueChanged
+  	@event QueueChanged
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 
 		/**
   Fires after files were filtered and added to the queue.
-  
-  @event FilesAdded
+  	@event FilesAdded
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {Array} files Array of file objects that were added to queue by the user.
    */
 
 		/**
   Fires when file is removed from the queue.
-  
-  @event FilesRemoved
+  	@event FilesRemoved
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {Array} files Array of files that got removed.
    */
@@ -944,32 +934,28 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		/**
   Fires just before a file is uploaded. Can be used to cancel upload of the current file
   by returning false from the handler.
-  
-  @event BeforeUpload
+  	@event BeforeUpload
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {plupload.File} file File to be uploaded.
    */
 
 		/**
   Fires when a file is to be uploaded by the runtime.
-  
-  @event UploadFile
+  	@event UploadFile
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {plupload.File} file File to be uploaded.
    */
 
 		/**
   Fires while a file is being uploaded. Use this event to update the current file upload progress.
-  
-  @event UploadProgress
+  	@event UploadProgress
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {plupload.File} file File that is currently being uploaded.
    */
 
 		/**
   Fires when file chunk is uploaded.
-  
-  @event ChunkUploaded
+  	@event ChunkUploaded
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {plupload.File} file File that the chunk was uploaded for.
   @param {Object} result Object with response properties.
@@ -982,8 +968,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		/**
   Fires when a file is successfully uploaded.
-  
-  @event FileUploaded
+  	@event FileUploaded
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {plupload.File} file File that was uploaded.
   @param {Object} result Object with response properties.
@@ -994,16 +979,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		/**
   Fires when all files in a queue are uploaded.
-  
-  @event UploadComplete
+  	@event UploadComplete
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {Array} files Array of file objects that was added to queue/selected by the user.
    */
 
 		/**
   Fires when a error occurs.
-  
-  @event Error
+  	@event Error
   @param {plupload.Uploader} uploader Uploader instance sending the event.
   @param {Object} error Contains code, message and sometimes file and other details.
   	@param {Number} error.code The plupload error code.
@@ -1012,8 +995,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		/**
   Fires when destroy method is called.
-  
-  @event Destroy
+  	@event Destroy
   @param {plupload.Uploader} uploader Uploader instance sending the event.
    */
 		var uid = plupload.guid(),
@@ -1237,7 +1219,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			/**
     * Get the value for the specified option or the whole configuration, if not specified.
-    * 
+    *
     * @method getOption
     * @since 2.1
     * @param {String} [option] Name of the option to get
@@ -1362,7 +1344,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			/**
     * Adds file to the queue programmatically. Can be native file, instance of Plupload.File,
-    * instance of mOxie.File, input[type="file"] element, or array of these. Fires FilesAdded, 
+    * instance of mOxie.File, input[type="file"] element, or array of these. Fires FilesAdded,
     * if any files were added to the queue. Otherwise nothing happens.
     *
     * @method addFile
@@ -1425,7 +1407,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 						}
 						resolveFile(new plupload.File(file));
 					}
-					// o.Blob 
+					// o.Blob
 					else if (file instanceof o.Blob) {
 							resolveFile(file.getSource());
 							file.destroy();
@@ -1971,7 +1953,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   *
   * @class File
   * @constructor
-  * 
+  *
   * @param {Object} file Object containing file properties
   * @param {String} file.name Name of the file.
   * @param {Number} file.size File size.
@@ -1982,7 +1964,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		/**
   @class PluploadFile
   	@constructor
-  @param {o.File} file 
+  @param {o.File} file
   */
 		function PluploadFile(file) {
 			/**
@@ -2129,8 +2111,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 				/**
     Get the value for the specified option or the whole configuration, if not specified.
-    
-    @method getOption
+    	@method getOption
     @sinse 2.3
     @param {String} [option] Name of the option to get
     @return {Mixed} Value for the option or the whole set
@@ -2167,7 +2148,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 				/**
     Initiate file upload.
     	@method upload
-    @sinse 2.3		
+    @sinse 2.3
     @param {Object} options
     	@param {String} options.url
     	@param {Number} options.max_retries
@@ -2449,7 +2430,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 							this.destroy();
 							return cb(blob);
 						}
-						// otherwise downsize					
+						// otherwise downsize
 						img.downsize(params.width, params.height, params.crop, params.preserve_headers);
 					};
 
@@ -2472,8 +2453,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		plupload.extend(PluploadFile, {
 			/**
    File is queued for upload
-   
-   @property QUEUED
+   	@property QUEUED
    @static
    @final
    */
@@ -2481,8 +2461,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			/**
    File is being uploaded
-   
-   @property UPLOADING
+   	@property UPLOADING
    @static
    @final
    */
@@ -2490,8 +2469,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			/**
    File has failed to be uploaded
-   
-   @property FAILED
+   	@property FAILED
    @static
    @final
    */
@@ -2499,8 +2477,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			/**
    File has been uploaded successfully
-   
-   @property DONE
+   	@property DONE
    @static
    @final
    */
@@ -2508,8 +2485,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 			/**
    File (Image) is being resized
-   
-   @property RESIZING
+   	@property RESIZING
    @static
    @final
    */
@@ -2643,4 +2619,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 
 	window.plupload = plupload;
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = plupload;
+	}
 })(window, mOxie);
