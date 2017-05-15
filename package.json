@@ -28,7 +28,8 @@
     "babel-register": "^6.0.0"
   },
   "dependencies": {
-    "qiniu-js": "^1.0.19",
-    "mOxie": "github:moxiecode/moxie"
+    "mOxie": "github:moxiecode/moxie",
+    "plupload": "^2.3.2",
+    "qiniu-js": "^1.0.19"
   }
 }
