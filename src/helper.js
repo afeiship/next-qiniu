@@ -20,10 +20,10 @@ export default class {
       objectAssign({
         init: {
           FileUploaded: function (up, file, info) {
-            deferred.resolve(up, file, info);
+            deferred.resolve({up, file, info});
           },
           Error: function (up, err, errTip) {
-            deferred.reject(up, err, errTip);
+            deferred.reject({up, err, errTip});
           }
         }
       }, DEFAULTS, inOptions)

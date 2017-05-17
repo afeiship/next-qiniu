@@ -53,10 +53,10 @@ var _default = function () {
       _qiniuJs2.default.uploader((0, _objectAssign2.default)({
         init: {
           FileUploaded: function FileUploaded(up, file, info) {
-            deferred.resolve(up, file, info);
+            deferred.resolve({ up: up, file: file, info: info });
           },
           Error: function Error(up, err, errTip) {
-            deferred.reject(up, err, errTip);
+            deferred.reject({ up: up, err: err, errTip: errTip });
           }
         }
       }, _const.DEFAULTS, inOptions));
