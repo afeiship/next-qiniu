@@ -50,7 +50,7 @@ var _default = function () {
       var events = inOptions.events,
           options = _objectWithoutProperties(inOptions, ['events']);
 
-      _qiniuJs2.default.uploader((0, _objectAssign2.default)({
+      return _qiniuJs2.default.uploader((0, _objectAssign2.default)({
         init: events
       }, _const.DEFAULTS, options));
     }
