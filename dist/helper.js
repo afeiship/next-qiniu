@@ -59,11 +59,11 @@ var _default = (_temp = _class = function () {
       _qiniuJs2.default.uploader((0, _objectAssign2.default)({
         init: (0, _objectAssign2.default)({
           FileUploaded: function FileUploaded(up, file, info) {
-            this.uploaderDeferred = _q2.default.defer();
-            this.uploaderDeferred.resolve({ up: up, file: file, info: info });
+            this.deferred = _q2.default.defer();
+            this.deferred.resolve({ up: up, file: file, info: info });
           },
           Error: function Error(up, err, errTip) {
-            this.uploaderDeferred.reject({ up: up, err: err, errTip: errTip });
+            this.deferred.reject({ up: up, err: err, errTip: errTip });
           }
         }, events)
       }, _const.DEFAULTS, options));
@@ -72,6 +72,6 @@ var _default = (_temp = _class = function () {
   }]);
 
   return _default;
-}(), _class.uploaderDeferred = null, _temp);
+}(), _class.deferred = null, _temp);
 
 exports.default = _default;

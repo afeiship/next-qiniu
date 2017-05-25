@@ -6,7 +6,7 @@ import objectAssign from 'object-assign';
 import plupload from 'plupload';
 
 export default class {
-  static uploaderDeferred = null;
+  static deferred = null;
   static hotfix() {
     window.plupload = plupload;
     window.mOxie = mOxie;
@@ -20,11 +20,11 @@ export default class {
       objectAssign({
         init: objectAssign({
           FileUploaded: function (up, file, info) {
-            this.uploaderDeferred = Q.defer();
-            this.uploaderDeferred.resolve({up, file, info});
+            this.deferred = Q.defer();
+            this.deferred.resolve({up, file, info});
           },
           Error: function (up, err, errTip) {
-            this.uploaderDeferred.reject({up, err, errTip});
+            this.deferred.reject({up, err, errTip});
           }
         },events)
       }, DEFAULTS, options)
