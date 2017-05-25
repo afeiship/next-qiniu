@@ -6,7 +6,7 @@ import objectAssign from 'object-assign';
 import plupload from 'plupload';
 
 export default class {
-
+  static uploaderDeferred = null;
   static hotfix() {
     window.plupload = plupload;
     window.mOxie = mOxie;
@@ -15,16 +15,16 @@ export default class {
   }
 
   static uploader(inOptions) {
-    const deferred = Q.defer();
     const {events,...options} = inOptions;
     Qiniu.uploader(
       objectAssign({
         init: objectAssign({
           FileUploaded: function (up, file, info) {
-            deferred.resolve({up, file, info});
+            this.uploaderDeferred = Q.defer();
+            this.uploaderDeferred.resolve({up, file, info});
           },
           Error: function (up, err, errTip) {
-            deferred.reject({up, err, errTip});
+            this.uploaderDeferred.reject({up, err, errTip});
           }
         },events)
       }, DEFAULTS, options)
