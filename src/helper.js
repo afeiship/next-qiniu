@@ -16,17 +16,18 @@ export default class {
 
   static uploader(inOptions) {
     const deferred = Q.defer();
+    const {events,...options} = inOptions;
     Qiniu.uploader(
       objectAssign({
-        init: {
+        init: objectAssign({
           FileUploaded: function (up, file, info) {
             deferred.resolve({up, file, info});
           },
           Error: function (up, err, errTip) {
             deferred.reject({up, err, errTip});
           }
-        }
-      }, DEFAULTS, inOptions)
+        },events)
+      }, DEFAULTS, options)
     );
     return deferred.promise;
   }

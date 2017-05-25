@@ -31,6 +31,8 @@ var _plupload2 = _interopRequireDefault(_plupload);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var _default = function () {
@@ -50,16 +52,20 @@ var _default = function () {
     key: 'uploader',
     value: function uploader(inOptions) {
       var deferred = _q2.default.defer();
+
+      var events = inOptions.events,
+          options = _objectWithoutProperties(inOptions, ['events']);
+
       _qiniuJs2.default.uploader((0, _objectAssign2.default)({
-        init: {
+        init: (0, _objectAssign2.default)({
           FileUploaded: function FileUploaded(up, file, info) {
             deferred.resolve({ up: up, file: file, info: info });
           },
           Error: function Error(up, err, errTip) {
             deferred.reject({ up: up, err: err, errTip: errTip });
           }
-        }
-      }, _const.DEFAULTS, inOptions));
+        }, events)
+      }, _const.DEFAULTS, options));
       return deferred.promise;
     }
   }]);
