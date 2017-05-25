@@ -53,23 +53,12 @@ var _default = (_temp = _class = function () {
   }, {
     key: 'uploader',
     value: function uploader(inOptions) {
-      var _this = this;
-
       var events = inOptions.events,
           options = _objectWithoutProperties(inOptions, ['events']);
 
       _qiniuJs2.default.uploader((0, _objectAssign2.default)({
-        init: (0, _objectAssign2.default)({
-          FileUploaded: function FileUploaded(up, file, info) {
-            _this.deferred = _q2.default.defer();
-            _this.deferred.resolve({ up: up, file: file, info: info });
-          },
-          Error: function Error(up, err, errTip) {
-            _this.deferred.reject({ up: up, err: err, errTip: errTip });
-          }
-        }, events)
+        init: events
       }, _const.DEFAULTS, options));
-      return this.deferred.promise;
     }
   }]);
 
