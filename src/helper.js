@@ -19,11 +19,11 @@ export default class {
     Qiniu.uploader(
       objectAssign({
         init: objectAssign({
-          FileUploaded: function (up, file, info) {
+          FileUploaded:  (up, file, info)=> {
             this.deferred = Q.defer();
             this.deferred.resolve({up, file, info});
           },
-          Error: function (up, err, errTip) {
+          Error: (up, err, errTip)=> {
             this.deferred.reject({up, err, errTip});
           }
         },events)
