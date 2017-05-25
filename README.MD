@@ -19,15 +19,20 @@ Helper.uploader({
     browse_button: 'pickfile',
     container: 'qiniu_container',
     events:{
-      FilesAdded:()=>{
-        //your logics
+      FilesAdded: () => {
+        //file add.
+      },
+      FileUploaded: (up, file, info) => {
+        //on file uploaded.
+      },
+      UploadComplete: () => {
+        //upload complete.
+      },
+      Error: (up, err, errTip) => {
+        //on error.
       }
     }
-}).then(({info})=>{
-
-},({errTip})=>{
-
-});
+})
 ```
 
 
