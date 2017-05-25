@@ -16,12 +16,17 @@ import Qiniu,{Helper} from 'qiniu-jssdk';
 //2.User Qiniu Object in your bussiness.
 Helper.uploader({
     uptoken:/*YOUR_TOKEN*/,
-    browse_button: 'pickfile', 
-    container: 'qiniu_container'
-}).then((up, file, info)=>{
-    
-},(up, err, errTip)=>{
-    
+    browse_button: 'pickfile',
+    container: 'qiniu_container',
+    events:{
+      FilesAdded:()=>{
+        //your logics
+      }
+    }
+}).then(({info})=>{
+
+},({errTip})=>{
+
 });
 ```
 
