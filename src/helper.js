@@ -29,7 +29,7 @@ export default class {
         },events)
       }, DEFAULTS, options)
     );
-    return deferred.promise;
+    return this.deferred.promise;
   }
 
 }

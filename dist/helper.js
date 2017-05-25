@@ -69,7 +69,7 @@ var _default = (_temp = _class = function () {
           }
         }, events)
       }, _const.DEFAULTS, options));
-      return deferred.promise;
+      return this.deferred.promise;
     }
   }]);
 
