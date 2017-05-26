@@ -13,7 +13,7 @@ var _qiniuJs = require('qiniu-js');
 
 var _qiniuJs2 = _interopRequireDefault(_qiniuJs);
 
-var _moxie = require('plupload/js/moxie');
+var _moxie = require('./lib/moxie');
 
 var _moxie2 = _interopRequireDefault(_moxie);
 
@@ -21,7 +21,7 @@ var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _plupload = require('plupload');
+var _plupload = require('./lib/plupload');
 
 var _plupload2 = _interopRequireDefault(_plupload);
 
@@ -41,8 +41,8 @@ var _default = function () {
     value: function hotfix() {
       window.plupload = _plupload2.default;
       window.mOxie = _moxie2.default;
-      window.mOxie.Env = _moxie2.default.core.utils.Env;
-      window.mOxie.XMLHttpRequest = _moxie2.default.xhr.XMLHttpRequest;
+      // window.mOxie.Env = mOxie.core.utils.Env;
+      // window.mOxie.XMLHttpRequest = mOxie.xhr.XMLHttpRequest;
     }
   }, {
     key: 'uploader',
