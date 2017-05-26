@@ -8,6 +8,11 @@ npm install afeiship/qiniu-jssdk
 ```
 
 ## usage:
+```html
+<script type="text/javascript" src="http://jssdk.demo.qiniu.io/bower_components/plupload/js/moxie.js"></script>
+<script type="text/javascript" src="http://jssdk.demo.qiniu.io/bower_components/plupload/js/plupload.dev.js"></script>
+```
+
 ```javascript
 import Qiniu,{Helper} from 'qiniu-jssdk';
 
