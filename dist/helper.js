@@ -13,7 +13,7 @@ var _qiniuJs = require('qiniu-js');
 
 var _qiniuJs2 = _interopRequireDefault(_qiniuJs);
 
-var _moxie = require('qiniu-js/libs/moxie');
+var _moxie = require('qiniu-js/src/libs/moxie');
 
 var _moxie2 = _interopRequireDefault(_moxie);
 
@@ -21,7 +21,7 @@ var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _plupload = require('qiniu-js/libs/plupload');
+var _plupload = require('qiniu-js/src/libs/plupload');
 
 var _plupload2 = _interopRequireDefault(_plupload);
 

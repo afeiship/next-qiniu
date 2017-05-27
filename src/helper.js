@@ -1,8 +1,8 @@
 import {DEFAULTS} from './const';
 import Qiniu from 'qiniu-js';
-import mOxie from 'qiniu-js/libs/moxie';
+import mOxie from 'qiniu-js/src/libs/moxie';
 import objectAssign from 'object-assign';
-import plupload from 'qiniu-js/libs/plupload';
+import plupload from 'qiniu-js/src/libs/plupload';
 
 export default class {
   
