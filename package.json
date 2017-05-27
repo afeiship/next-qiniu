@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "object-assign": "^4.1.1",
+    "plupload": "^2.3.2",
     "q": "^1.5.0",
     "qiniu-js": "github:afeiship/qiniu-js"
   }
