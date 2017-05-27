@@ -12,12 +12,7 @@ export const DEFAULTS = {
   auto_start: true,                   // 选择文件后自动上传，若关闭需要自己绑定事件触发上传
   multi_selection: false,
   filters: {
-    mime_types: [
-      {
-        title: "Image files",
-        extensions: "jpeg,jpg,gif,png"
-      }
-    ],
+    mime_types: 'image/*',
     max_img_resolution: [1280, 960],
     prevent_duplicates: false
   }

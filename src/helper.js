@@ -15,7 +15,7 @@ export default class {
     const {events, ...options} = inOptions;
     return Qiniu.uploader(
       objectAssign({
-        init: events
+        init: events,
       }, DEFAULTS, options)
     );
   }
