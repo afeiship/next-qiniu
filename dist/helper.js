@@ -21,7 +21,7 @@ var _objectAssign = require('object-assign');
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-var _plupload = require('plupload');
+var _plupload = require('plupload/js/plupload.dev');
 
 var _plupload2 = _interopRequireDefault(_plupload);
 
